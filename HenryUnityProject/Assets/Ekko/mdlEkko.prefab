@@ -828,7 +828,7 @@ MonoBehaviour:
     transform: {fileID: 1680491096494344327}
   - name: Glass
     transform: {fileID: 5911965620126124678}
-  - name: MainHurtbox
+  - name: Hourglass
     transform: {fileID: 2828361769013444878}
 --- !u!1 &1804388208484597354
 GameObject:
@@ -1538,7 +1538,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c03e83b99d7d593478cf576b28542b1b, type: 2}
+  - {fileID: 2100000, guid: d7f7966c173b8494bab186a0485421a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2130,7 +2130,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c03e83b99d7d593478cf576b28542b1b, type: 2}
+  - {fileID: 2100000, guid: d7f7966c173b8494bab186a0485421a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4260,7 +4260,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c03e83b99d7d593478cf576b28542b1b, type: 2}
+  - {fileID: 2100000, guid: d7f7966c173b8494bab186a0485421a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
