@@ -43,31 +43,7 @@ namespace EkkoMod.Modules.Survivors
                 },
                 new CustomRendererInfo
                 {
-                    childName = "Bat Blade",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Bat Handle",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Bat Ring",
-                },
-                new CustomRendererInfo
-                {
                     childName = "Ekko",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Equipment",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Glass",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Hourglass",
                 }
         };
 
@@ -230,21 +206,21 @@ namespace EkkoMod.Modules.Survivors
 
             defaultSkin.meshReplacements = new SkinDef.MeshReplacement[]
             {
-                //place your mesh replacements here
-                //unnecessary if you don't have multiple skins
-                //new SkinDef.MeshReplacement
-                //{
-                //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshEkkoGun"),
-                //    renderer = defaultRenderers[1].renderer
-                //},
-                //new SkinDef.MeshReplacement
-                //{
-                //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshEkko"),
-                //    renderer = defaultRenderers[2].renderer
-                //},
+            //place your mesh replacements here
+            //unnecessary if you don't have multiple skins
+            //new SkinDef.MeshReplacement
+            //{
+            //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshEkkoGun"),
+            //    renderer = defaultRenderers[1].renderer
+            //},
+            //new SkinDef.MeshReplacement
+            //{
+            //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshEkko"),
+            //    renderer = defaultRenderers[2].renderer
+            //},
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("mdlEkko"),
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ekkoMesh"),
                     renderer = defaultRenderers[0].renderer
                 }
             };
@@ -261,7 +237,7 @@ namespace EkkoMod.Modules.Survivors
 
             #region ArcaneSkin
 
-            Skins.SkinDefInfo arcaneSkinDefInfo = default(Skins.SkinDefInfo);
+             Skins.SkinDefInfo arcaneSkinDefInfo = default(Skins.SkinDefInfo);
             arcaneSkinDefInfo.Name = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
             arcaneSkinDefInfo.NameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
             arcaneSkinDefInfo.Icon = Assets.mainAssetBundle.LoadAsset<Sprite>("ekkoIcon");
@@ -274,20 +250,21 @@ namespace EkkoMod.Modules.Survivors
             arcaneSkinDefInfo.ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0];
 
             arcaneSkinDefInfo.GameObjectActivations = new SkinDef.GameObjectActivation[0];
-
-            arcaneSkinDefInfo.MeshReplacements = new SkinDef.MeshReplacement[]
+           
+             arcaneSkinDefInfo.MeshReplacements = new SkinDef.MeshReplacement[]
             {
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ArcaneBody"),
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("arcaneMesh"),
                     renderer = defaultRenderers[0].renderer
                 },
-            };
+            }; 
 
             arcaneSkinDefInfo.RendererInfos = new CharacterModel.RendererInfo[characterModel.baseRendererInfos.Length];
             characterModel.baseRendererInfos.CopyTo(arcaneSkinDefInfo.RendererInfos, 0);
 
             arcaneSkinDefInfo.RendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
+
             //arcaneSkinDefInfo.RendererInfos[arcaneSkinDefInfo.RendererInfos.Length - 1].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
 
             SkinDef arcaneSkin = Skins.CreateSkinDef(arcaneSkinDefInfo);

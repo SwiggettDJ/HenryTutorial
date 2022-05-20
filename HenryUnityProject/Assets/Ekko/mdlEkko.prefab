@@ -816,20 +816,8 @@ MonoBehaviour:
   transformPairs:
   - name: MainHurtbox
     transform: {fileID: 1856256904893062385}
-  - name: Bat Blade
-    transform: {fileID: 4252206904286578355}
-  - name: Bat Handle
-    transform: {fileID: 8957395686115706640}
-  - name: Bat Ring
-    transform: {fileID: 4319537700577495057}
   - name: Ekko
     transform: {fileID: 982211402888650695}
-  - name: Equipment
-    transform: {fileID: 1680491096494344327}
-  - name: Glass
-    transform: {fileID: 5911965620126124678}
-  - name: Hourglass
-    transform: {fileID: 2828361769013444878}
 --- !u!1 &1804388208484597354
 GameObject:
   m_ObjectHideFlags: 0

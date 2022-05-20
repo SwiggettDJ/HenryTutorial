@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1692080009
+CRC: 1300418506
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e7d8bc82f4068c6f06a3c295cf7d2797
+    Hash: dec87333eb6e0962ee1358416d81208b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 629e386d734ac71e9bc9dd2ba6bb23b5
@@ -64,6 +64,7 @@ Assets:
 - Assets/Ekko/Clips/run from idle.anim
 - Assets/Ekko/Clips/falling.anim
 - Assets/Ekko/Clips/spell 4.anim
+- Assets/Ekko/EkkoMesh.mesh
 - Assets/Ekko/Clips/spell 4 end to run.anim
 - Assets/Ekko/Clips/spell 3 roll.anim
 - Assets/Ekko/Clips/idle 1.anim
@@ -79,6 +80,7 @@ Assets:
 - Assets/Ekko/Clips/laugh.anim
 - Assets/Ekko/Clips/Landing Still.anim
 - Assets/Ekko/Clips/taunt loop.anim
+- Assets/Ekko/arcaneMesh.mesh
 - Assets/Ekko/Clips/idle in.anim
 - Assets/Ekko/Clips/respawn.anim
 - Assets/Ekko/Clips/idle 3.anim
