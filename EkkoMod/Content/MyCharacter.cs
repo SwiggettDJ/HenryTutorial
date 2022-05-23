@@ -37,13 +37,13 @@ namespace EkkoMod.Modules.Survivors
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] 
         {
-                new CustomRendererInfo
+             new CustomRendererInfo
                 {
                     childName = "MainHurtbox",
                 },
                 new CustomRendererInfo
                 {
-                    childName = "Ekko",
+                    childName = "Model",
                 }
         };
 
@@ -220,8 +220,8 @@ namespace EkkoMod.Modules.Survivors
             //},
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ekkoMesh"),
-                    renderer = defaultRenderers[0].renderer
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("Base"),
+                    renderer = mainRenderer
                 }
             };
             skins.Add(defaultSkin);
@@ -237,7 +237,7 @@ namespace EkkoMod.Modules.Survivors
 
             #region ArcaneSkin
 
-             Skins.SkinDefInfo arcaneSkinDefInfo = default(Skins.SkinDefInfo);
+            Skins.SkinDefInfo arcaneSkinDefInfo = default(Skins.SkinDefInfo);
             arcaneSkinDefInfo.Name = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
             arcaneSkinDefInfo.NameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
             arcaneSkinDefInfo.Icon = Assets.mainAssetBundle.LoadAsset<Sprite>("ekkoIcon");
@@ -255,8 +255,8 @@ namespace EkkoMod.Modules.Survivors
             {
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("arcaneMesh"),
-                    renderer = defaultRenderers[0].renderer
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("Arcane"),
+                    renderer = mainRenderer
                 },
             }; 
 
@@ -265,7 +265,7 @@ namespace EkkoMod.Modules.Survivors
 
             arcaneSkinDefInfo.RendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
 
-            //arcaneSkinDefInfo.RendererInfos[arcaneSkinDefInfo.RendererInfos.Length - 1].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
+            arcaneSkinDefInfo.RendererInfos[arcaneSkinDefInfo.RendererInfos.Length - 1].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
 
             SkinDef arcaneSkin = Skins.CreateSkinDef(arcaneSkinDefInfo);
             skins.Add(arcaneSkin);
