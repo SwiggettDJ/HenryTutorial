@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2696347147
+CRC: 2126540517
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d15b0f0a0f8bff07102e4623576d497a
+    Hash: 0f483a8ed272768faa1da66667931c12
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 629e386d734ac71e9bc9dd2ba6bb23b5
+    Hash: dd61614b0b00416edc6fa4dd21df0230
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,6 +30,8 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: cb4ee283b4c42744fa7a7dbd88931cd6, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
 - Class: 115
   Script: {instanceID: 0}
@@ -37,40 +39,47 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Ekko/ArcaneGlass.mesh
+- Assets/Ekko/Textures/Base/Skins_Base_BaseMap.png
 - Assets/Ekko/Textures/Base/ekko_base_emmisive.png
 - Assets/Ekko/Clips/Fall to run.anim
 - Assets/Ekko/Clips/channel.anim
-- Assets/Ekko/Textures/Base/ekko_p2.dds
-- Assets/Ekko/Weapon_BackGlass_Mat.mat
+- Assets/Ekko/BoardHoodMask.mesh
 - Assets/Ekko/Clips/death.anim
+- Assets/Ekko/Textures/Base/ekko_w.png
 - Assets/Ekko/Textures/Base/ekkoIcon.png
 - Assets/Ekko/Clips/channel windup.anim
-- Assets/Ekko/PunkGenius_Geo_Base_Mat.mat
+- Assets/Ekko/Textures/Base/Materials/PunkGenius_Geo_Base_Mat.mat
 - Assets/Ekko/Textures/Arcane/Arcane Mask.mat
 - Assets/Ekko/Clips/shrink.anim
 - Assets/Ekko/Clips/joke.anim
 - Assets/Ekko/Ekko.fbx
+- Assets/Ekko/Clips/arcane idle in.anim
 - Assets/Ekko/animEkko.controller
-- Assets/Ekko/EkkoDisplay.prefab
-- Assets/Ekko/Textures/Base/ekko_w.dds
 - Assets/Ekko/Clips/spell 1 catch standing.anim
+- Assets/Ekko/Textures/Base/ekko_p.png
 - Assets/Ekko/Skins.fbx
 - Assets/Ekko/Clips/attack tower.anim
-- Assets/Ekko/Textures/Base/ekko_p.dds
 - Assets/Ekko/Clips/attack p1.anim
-- Assets/Ekko/Textures/Base/ekko_q.dds
 - Assets/Ekko/Clips/run from idle.anim
 - Assets/Ekko/Clips/falling.anim
 - Assets/Ekko/Clips/spell 4.anim
+- Assets/Ekko/arcaneMesh.fbx
+- Assets/Ekko/Anims.fbx
 - Assets/Ekko/Clips/spell 4 end to run.anim
+- Assets/Ekko/Glass.mesh
+- Assets/Ekko/Textures/Base/ekko_q.png
 - Assets/Ekko/Clips/spell 3 roll.anim
 - Assets/Ekko/Clips/idle 1.anim
 - Assets/Ekko/Clips/attack p3.anim
-- Assets/Ekko/Clips/arcane idle.anim
-- Assets/Ekko/Textures/Base/ekko_r.dds
+- Assets/Ekko/Textures/Base/ekko_p2.png
+- Assets/Ekko/Textures/Base/Skins_Glass_BaseMap.png
 - Assets/Ekko/Clips/idle 1-2.anim
+- Assets/Ekko/Textures/Base/Skins_Base_Emissive.png
 - Assets/Ekko/Clips/spell 4 end.anim
 - Assets/Ekko/Clips/attack1.anim
 - Assets/Ekko/Clips/spell 3 attack.anim
@@ -80,10 +89,10 @@ Assets:
 - Assets/Ekko/Clips/laugh.anim
 - Assets/Ekko/Clips/Landing Still.anim
 - Assets/Ekko/Clips/taunt loop.anim
+- Assets/Ekko/Textures/Base/Materials/GlassMat.mat
 - Assets/Ekko/Clips/idle in.anim
 - Assets/Ekko/Clips/respawn.anim
 - Assets/Ekko/Clips/idle 3.anim
-- Assets/Ekko/Arcane.mesh
 - Assets/Ekko/ArcaneEkko.fbx
 - Assets/Ekko/Textures/Arcane/Arcane Body.mat
 - Assets/Ekko/Clips/run haste.anim
@@ -92,34 +101,37 @@ Assets:
 - Assets/Ekko/Clips/spell 4 end to idle.anim
 - Assets/Ekko/Clips/spell 2 clone.anim
 - Assets/Ekko/Textures/Arcane/ekko_skin36_tx_cm.pie_c_12_4.dds
-- Assets/Ekko/EkkoBaseGreenEmissive.mat
+- Assets/Ekko/Textures/Base/Materials/EkkoBaseGreenEmissive.mat
 - Assets/Ekko/Clips/spell 1 catch forward.anim
 - Assets/Ekko/Clips/attack2.anim
 - Assets/Ekko/Textures/Arcane/ekko_skin36_book_tx_cm.pie_c_12_4.dds
 - Assets/Ekko/Clips/attack3.anim
 - Assets/Ekko/Clips/spell 3 dash to idel.anim
 - Assets/Ekko/animEkkoMenu.controller
-- Assets/Ekko/Textures/Base/ekko_e.dds
 - Assets/Ekko/Textures/Arcane/ekko_skin36_recall_tx_cm.pie_c_12_4.dds
+- Assets/Ekko/Textures/Base/ekko_e.png
 - Assets/Ekko/Clips/run 1.anim
 - Assets/Ekko/Clips/spell 2 cast.anim
-- Assets/Ekko/Clips/arcane idle in.anim
-- Assets/Ekko/DisplayEkkoBaseGreenEmissive.mat
+- Assets/Ekko/Clips/arcane idle.anim
+- Assets/Ekko/Textures/Base/Materials/DisplayEkkoBaseGreenEmissive.mat
 - Assets/Ekko/Clips/spell 1.anim
+- Assets/Ekko/EkkoDisplay.prefab
 - Assets/Ekko/Clips/run alt.anim
 - Assets/Ekko/Clips/dance loop.anim
 - Assets/Ekko/animEkkoArcaneMenu.controller
+- Assets/Ekko/Clips/arcane idle out.anim
 - Assets/Ekko/Textures/Arcane/ekko_glass_tx_cm.pie_c_12_4.dds
 - Assets/Ekko/Clips/spell 1 to run front.anim
 - Assets/Ekko/Clips/recall.anim
 - Assets/Ekko/Clips/spell 1 to idle.anim
-- Assets/Ekko/EkkoMdl.fbx
 - Assets/Ekko/Clips/crit.anim
 - Assets/Ekko/Textures/Base/ekko_base_tx_cm.dds
+- Assets/Ekko/ArcaneBody.mesh
 - Assets/Ekko/Textures/Base/ekko_glass_tx_cm.dds
 - Assets/Ekko/mdlEkko.prefab
 - Assets/Ekko/Clips/taunt.anim
 - Assets/Ekko/Clips/dance.anim
 - Assets/Ekko/Clips/spell 3 run.anim
 - Assets/Ekko/Clips/spell 1 to run side.anim
+- Assets/Ekko/Textures/Base/ekko_r.png
 Dependencies: []

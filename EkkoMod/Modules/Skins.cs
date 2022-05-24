@@ -139,7 +139,6 @@ namespace EkkoMod.Modules
                     mesh = Assets.mainAssetBundle.LoadAsset<Mesh>(meshes[i])
                 });
             }
-
             return meshReplacements.ToArray();
         }
     }
