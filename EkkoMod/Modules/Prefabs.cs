@@ -407,7 +407,7 @@ namespace EkkoMod.Modules {
         //the material to use. pass in null to use the material in the bundle
         public Material material = null;
         //don't set the hopoo shader on the material, and simply use the material from your prefab, unchanged
-        public bool dontHotpoo = false;
+        public bool dontHotpoo = true;
         //ignores shields and other overlays. use if you're not using a hopoo shader
         public bool ignoreOverlays = false;
     }

@@ -7,11 +7,13 @@ namespace EkkoMod.Modules
     public static class Buffs
     {
         // armor buff gained during roll
-        internal static BuffDef armorBuff;
+        //internal static BuffDef armorBuff;
+        internal static BuffDef phaseBuff;
 
         internal static void RegisterBuffs()
         {
-            armorBuff = AddNewBuff("EkkoArmorBuff", RoR2.LegacyResourcesAPI.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
+            //armorBuff = AddNewBuff("EkkoArmorBuff", RoR2.LegacyResourcesAPI.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
+            phaseBuff = AddNewBuff("EkkoPhaseBuff", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ekko_e"), Color.white, false, false);
         }
 
         // simple helper method

@@ -93,7 +93,7 @@ namespace EkkoMod.Modules
             //swordHitSoundEvent = CreateNetworkSoundEventDef("EkkoSwordHit");
 
             bombExplosionEffect = LoadEffect("BombExplosionEffect", "EkkoBombExplosion");
-
+            
             if (bombExplosionEffect)
             {
                 ShakeEmitter shakeEmitter = bombExplosionEffect.AddComponent<ShakeEmitter>();
@@ -109,6 +109,7 @@ namespace EkkoMod.Modules
                     cycleOffset = 0f
                 };
             }
+            
 
             swordSwingEffect = Assets.LoadEffect("EkkoSwordSwingEffect", true);
             swordHitImpactEffect = Assets.LoadEffect("ImpactEkkoSlash");

@@ -66,13 +66,14 @@ namespace EkkoMod
             orig(self);
 
             // a simple stat hook, adds armor after stats are recalculated
+            /*
             if (self)
             {
                 if (self.HasBuff(Modules.Buffs.armorBuff))
                 {
                     self.armor += 300f;
                 }
-            }
+            } */
         }
     }
 }

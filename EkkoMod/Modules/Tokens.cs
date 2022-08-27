@@ -28,7 +28,8 @@ namespace EkkoMod.Modules
 
             #region Skins
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
-            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Arcane");
+            LanguageAPI.Add(prefix + "ARCANE_SKIN_NAME", "Arcane");
+            LanguageAPI.Add(prefix + "PROJECT_SKIN_NAME", "Project");
             #endregion
 
             #region Passive

@@ -22,10 +22,11 @@ namespace EkkoMod.Modules.Survivors
             bodyNameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_NAME",
             subtitleNameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_NAME_SUBTITLE",
 
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("ekkoIcon"),
+            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("baseIcon"),
             bodyColor = Color.white,
 
-            crosshair = Modules.Assets.LoadCrosshair("Standard"),
+            //crosshair = Modules.Assets.LoadCrosshair("Standard"),
+            crosshair = Assets.mainAssetBundle.LoadAsset<GameObject>("baseIcon"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
@@ -79,8 +80,8 @@ namespace EkkoMod.Modules.Survivors
             GameObject model = childLocator.gameObject;
 
             //example of how to create a hitbox
-            //Transform hitboxTransform = childLocator.FindChild("SwordHitbox");
-            //Modules.Prefabs.SetupHitbox(model, hitboxTransform, "Sword");
+            Transform hitboxTransform = childLocator.FindChild("SwordHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform, "Sword");
         }
 
         public override void InitializeSkills()
@@ -108,10 +109,10 @@ namespace EkkoMod.Modules.Survivors
                 skillNameToken = prefix + "_EKKO_BODY_SECONDARY_GUN_NAME",
                 skillDescriptionToken = prefix + "_EKKO_BODY_SECONDARY_GUN_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ekko_q"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.TimeWinder)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
-                baseRechargeInterval = 1f,
+                baseRechargeInterval = .5f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -137,7 +138,7 @@ namespace EkkoMod.Modules.Survivors
                 skillNameToken = prefix + "_EKKO_BODY_UTILITY_ROLL_NAME",
                 skillDescriptionToken = prefix + "_EKKO_BODY_UTILITY_ROLL_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ekko_e"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Roll)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.PhaseDive)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
                 baseRechargeInterval = 4f,
@@ -165,7 +166,7 @@ namespace EkkoMod.Modules.Survivors
                 skillNameToken = prefix + "_EKKO_BODY_SPECIAL_BOMB_NAME",
                 skillDescriptionToken = prefix + "_EKKO_BODY_SPECIAL_BOMB_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ekko_r"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowBomb)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Chronobreak)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
@@ -204,7 +205,7 @@ namespace EkkoMod.Modules.Survivors
 
             #region DefaultSkin
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("ekkoIcon"),
+                Assets.mainAssetBundle.LoadAsset<Sprite>("baseIcon"),
                 defaultRenderers,
                 mainRenderer,
                 model);
@@ -229,6 +230,11 @@ namespace EkkoMod.Modules.Survivors
                 {
                     gameObject = childLocator.FindChild("Board").gameObject,
                     shouldActivate = false
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Glass"),
+                    shouldActivate = true
                 }
             };
 
@@ -240,9 +246,9 @@ namespace EkkoMod.Modules.Survivors
             #region ArcaneSkin
 
             Skins.SkinDefInfo arcaneSkinDefInfo = default(Skins.SkinDefInfo);
-            arcaneSkinDefInfo.Name = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
-            arcaneSkinDefInfo.NameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_MASTERY_SKIN_NAME";
-            arcaneSkinDefInfo.Icon = Assets.mainAssetBundle.LoadAsset<Sprite>("ekkoIcon");
+            arcaneSkinDefInfo.Name = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_ARCANE_SKIN_NAME";
+            arcaneSkinDefInfo.NameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_ARCANE_SKIN_NAME";
+            arcaneSkinDefInfo.Icon = Assets.mainAssetBundle.LoadAsset<Sprite>("arcaneIcon");
             arcaneSkinDefInfo.UnlockableDef = null;
             arcaneSkinDefInfo.RootObject = model;
 
@@ -250,7 +256,7 @@ namespace EkkoMod.Modules.Survivors
             arcaneSkinDefInfo.MinionSkinReplacements = new SkinDef.MinionSkinReplacement[0];
             arcaneSkinDefInfo.ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0];
 
-            Material bodyMat = Modules.Materials.CreateHopooMaterial("Arcane Body");
+            //Material bodyMat = Modules.Materials.CreateHopooMaterial("Arcane Body");
 
             arcaneSkinDefInfo.MeshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -269,9 +275,9 @@ namespace EkkoMod.Modules.Survivors
             arcaneSkinDefInfo.RendererInfos = new CharacterModel.RendererInfo[characterModel.baseRendererInfos.Length];
             characterModel.baseRendererInfos.CopyTo(arcaneSkinDefInfo.RendererInfos, 0);
 
-            arcaneSkinDefInfo.RendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("Arcane Body");
+            arcaneSkinDefInfo.RendererInfos[0].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ArcaneBodyMat");
 
-            //arcaneSkinDefInfo.RendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("GlassMat");
+            arcaneSkinDefInfo.RendererInfos[1].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("GlassMat");
 
             SkinDef arcaneSkin = Skins.CreateSkinDef(arcaneSkinDefInfo);
 
@@ -281,11 +287,71 @@ namespace EkkoMod.Modules.Survivors
                 {
                     gameObject = childLocator.FindChildGameObject("Board"),
                     shouldActivate = true
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Glass"),
+                    shouldActivate = true
                 }
         };
             skins.Add(arcaneSkin);
 
-            #endregion arcaneSkin 
+            #endregion ArcaneSkin
+
+            #region ProjectSkin
+
+            Skins.SkinDefInfo projectSkinDefInfo = default(Skins.SkinDefInfo);
+            projectSkinDefInfo.Name = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_PROJECT_SKIN_NAME";
+            projectSkinDefInfo.NameToken = EkkoPlugin.DEVELOPER_PREFIX + "_EKKO_BODY_PROJECT_SKIN_NAME";
+            projectSkinDefInfo.Icon = Assets.mainAssetBundle.LoadAsset<Sprite>("projectIcon");
+            projectSkinDefInfo.UnlockableDef = null;
+            projectSkinDefInfo.RootObject = model;
+
+            projectSkinDefInfo.BaseSkins = new SkinDef[] { defaultSkin };
+            projectSkinDefInfo.MinionSkinReplacements = new SkinDef.MinionSkinReplacement[0];
+            projectSkinDefInfo.ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0];
+
+            //Material bodyMat = Modules.Materials.CreateHopooMaterial("Project Body");
+
+            projectSkinDefInfo.MeshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ProjectBody"),
+                    renderer = defaultRenderers[0].renderer
+                },
+                //new SkinDef.MeshReplacement
+                //{
+                   // mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ArcaneGlass"),
+                    //renderer = defaultRenderers[1].renderer
+                //}
+            };
+
+            projectSkinDefInfo.RendererInfos = new CharacterModel.RendererInfo[characterModel.baseRendererInfos.Length];
+            characterModel.baseRendererInfos.CopyTo(projectSkinDefInfo.RendererInfos, 0);
+
+            projectSkinDefInfo.RendererInfos[0].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ProjectBodyMat");
+
+            //projectSkinDefInfo.RendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("GlassMat");
+
+            SkinDef projectSkin = Skins.CreateSkinDef(projectSkinDefInfo);
+
+            projectSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            {
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Board"),
+                    shouldActivate = false
+                },
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("Glass"),
+                    shouldActivate = false
+                }
+        };
+            skins.Add(projectSkin);
+
+            #endregion ProjectSkin
 
             //uncomment this when you have a mastery skin
             #region MasterySkin
